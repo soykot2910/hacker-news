@@ -8,6 +8,7 @@ function App() {
   return (
     <Router>
       <SearchForm />
+      <Buttons />
       <Switch>
         <Route exact path="/" component={Stories} />
         <Route exact path="/comments/:id" component={Comments} />
