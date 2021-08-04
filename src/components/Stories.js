@@ -16,8 +16,7 @@ const Stories = () => {
           <article key={objectID} className="story">
             <h4 className="title">{title}</h4>
             <p className="info">
-              {points} points |{" "}
-              <a href={`/comments/${objectID}`}>{num_comments} comments</a>
+              {points} points | {num_comments} comments
             </p>
             <div>
               <a
