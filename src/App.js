@@ -7,8 +7,13 @@ import Stories from "./components/Stories";
 function App() {
   return (
     <Router>
-      <SearchForm />
-      <Buttons />
+      {window.location.href.split("/")[3] === "comments" ? (
+        ""
+      ) : (
+        <>
+          <SearchForm /> <Buttons />
+        </>
+      )}
       <Switch>
         <Route exact path="/" component={Stories} />
         <Route exact path="/comments/:id" component={Comments} />

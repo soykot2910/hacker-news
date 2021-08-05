@@ -270,3 +270,15 @@ Story
   text-transform: capitalize;
   font-size: 0.85rem;
 }
+.all-comments {
+  width: 80%;
+  margin: 0 auto;
+  background: #f6f6ef;
+  padding: 20px;
+}
+
+@media (max-width: 780px) {
+  .all-comments {
+    width: 100%;
+  }
+}
