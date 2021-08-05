@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import { useGlobalContext } from "../context";
+
 const Comment = ({ id }) => {
+  const { isLoading } = useGlobalContext();
   const [data, setData] = useState([]);
 
   const loadComments = async () => {
@@ -20,13 +23,17 @@ const Comment = ({ id }) => {
   var postTime = new Date(time * 1000);
   var formatedTime = postTime.toLocaleDateString("en-US");
 
+  if (isLoading) {
+    return <div className="loading"></div>;
+  }
+
   return (
-    <div>
+    <>
       <p className="info">
         {by} on {formatedTime}
       </p>
       <p style={{ color: "black" }}>{text}</p>
-    </div>
+    </>
   );
 };
 
